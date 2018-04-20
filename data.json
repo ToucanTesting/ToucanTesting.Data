@@ -1,0 +1,9 @@
+[
+    {
+        "component": "Module Name",
+        "userAction": "User Action",
+        "precondition": "precondition 1\n precondition2\nprecondition3",
+        "expectedResults": "expected 1\n expected 2\nexpected 3",
+        "steps": "import 1\n import 2\nimport 3"
+    }
+]
