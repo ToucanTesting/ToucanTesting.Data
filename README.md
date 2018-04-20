@@ -9,4 +9,4 @@ A Script to import data into the database
 - Generate a test token in auth0
 - Update the config.ts file variables `baseUrl` and `token`
 - Run `tsc`
-- Run `npm import`
+- Run `yarn start-import` or `npm run start-import`
