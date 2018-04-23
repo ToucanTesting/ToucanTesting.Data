@@ -5,7 +5,7 @@ A Script to import data into the database
 - `npm install -g typescript`
 
 ## Importing Data
-- Prepare the data.json file (follow the example object)
+- Prepare the `data.json` file (Example in `data.sample.json`)
 - Generate a test token in auth0
 - Update the config.ts file variables `baseUrl` and `token`
 - Run `tsc`
