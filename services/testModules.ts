@@ -24,7 +24,8 @@ export const mapTestModules = async function (testSuites: any): Promise<any> {
         } else {
             if (testModules[i].component === "Smoke (Critical)") {
             testSuite = testSuites.find((testSuite: any) => testSuite.name === "Kno2fy Smoke");
-
+            } else if (testModules[i].component === "Penetration Tests") {
+                testSuite = testSuites.find((testSuite: any) => testSuite.name === "Kno2fy Penetration");
             } else {
                 testSuite = testSuites.find((testSuite: any) => testSuite.name === "Kno2fy")
             }
@@ -36,6 +37,7 @@ export const mapTestModules = async function (testSuites: any): Promise<any> {
                 testSuiteId: testSuiteId
             }
 
+            console.log(newTestModule.name)
             const res = await axios.post(`${baseUrl}test-suites/${testSuiteId}/test-modules`, newTestModule);
             newTestModules.push(res.data);
         }

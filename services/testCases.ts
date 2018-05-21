@@ -19,20 +19,27 @@ interface ITestCase {
     isEnabled: boolean,
     priority?: Priority,
     testModuleId: number,
+    lastTested?: Date | null,
+    hasCriteria: boolean
 };
 
 export const createTestCases = async function (testModules: any): Promise<any> {
     let newTestCases: ITestCase[] = [];
     let count = 1;
+    console.log(`Importing ${testCases.length} Test Cases`);
     for (let i = 0; i < testCases.length; i++) {
         const testModule = testModules.find((testModule: any) => testModule.name === testCases[i].component)
 
         let newTestCase: ITestCase = {
-            description: (testCases[i].userAction),
+            description: testCases[i].userAction.replace("* ", ""),
             isAutomated: (testCases[i].automated === "Yes") ? true : false,
             isEnabled: true,
-            testModuleId: testModule.id
-        }
+            testModuleId: testModule.id,
+            lastTested: (testCases[i].lastTested) ? new Date(testCases[i].lastTested) : null,
+            hasCriteria: (testCases[i].userAction.indexOf("*") > -1) ? false : true
+        };
+
+        console.log(newTestCase.lastTested);
 
         if (testCases[i].priority) {
             newTestCase.priority = setPriority(testCases[i].priority);
@@ -78,13 +85,13 @@ export const createTestCases = async function (testModules: any): Promise<any> {
                 for (let i = 0; i < expectedResults.length; i++) {
                     if (expectedResults[i].trim().length > 0) {
 
-                    const expectedResult = {    
-                        description: expectedResults[i].replace('* ', ''),
-                        testCaseId: newTestCaseResult.id
+                        const expectedResult = {
+                            description: expectedResults[i].replace('* ', ''),
+                            testCaseId: newTestCaseResult.id
+                        }
+                        const res = await axios.post(`${baseUrl}expected-results`, expectedResult);
                     }
-                    const res = await axios.post(`${baseUrl}expected-results`, expectedResult);
-                }
-                    
+
                 }
             }
             console.log(`Created`);

@@ -7,6 +7,9 @@ let testSuites = [
     },
     {
         name: "Kno2fy Smoke"
+    },
+    {
+        name: "Kno2fy Penetration"
     }
 ];
 
