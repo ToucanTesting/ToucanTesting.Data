@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { baseUrl } from '../config/config';
-import * as data from '../../data.json';
+import * as data from '../data.json';
 import * as _ from 'lodash';
 
 const testCases: any = data;
@@ -26,24 +26,21 @@ interface ITestCase {
 export const createTestCases = async function (testModules: any): Promise<any> {
     let newTestCases: ITestCase[] = [];
     let count = 1;
+
     console.log(`Importing ${testCases.length} Test Cases`);
     for (let i = 0; i < testCases.length; i++) {
-        const testModule = testModules.find((testModule: any) => testModule.name === testCases[i].component)
+        const testModule = testModules.find((testModule: any) => testModule.name === testCases[i].Module);
+
 
         let newTestCase: ITestCase = {
-            description: testCases[i].userAction.replace("* ", ""),
-            isAutomated: (testCases[i].automated === "Yes") ? true : false,
+            description: testCases[i].Case.replace("* ", ""),
+            isAutomated: (testCases[i].Automated === "Yes") ? true : false,
             isEnabled: true,
             testModuleId: testModule.id,
-            lastTested: (testCases[i].lastTested) ? new Date(testCases[i].lastTested) : null,
-            hasCriteria: (testCases[i].userAction.indexOf("*") > -1) ? false : true
+            lastTested: (testCases[i]["Last Tested"]) ? new Date(testCases[i].lastTested) : null,
+            hasCriteria: (testCases[i].Criteria === "Yes") ? true : false,
+            priority: testCases[i].Priority
         };
-
-        console.log(newTestCase.lastTested);
-
-        if (testCases[i].priority) {
-            newTestCase.priority = setPriority(testCases[i].priority);
-        }
 
         try {
             console.log(`${count} - Creating Test Case: ${newTestCase.description}`)
@@ -52,12 +49,12 @@ export const createTestCases = async function (testModules: any): Promise<any> {
             const newTestCaseResult: any = res.data;
             newTestCases.push(newTestCaseResult);
 
-            if (testCases[i].steps) {
-                let testActions: string[] = splitOnNewline(testCases[i].steps);
+            if (testCases[i].Steps) {
+                const testActions: string[] = testCases[i].Steps.split('* ');
                 for (let i = 0; i < testActions.length; i++) {
                     if (testActions[i].trim().length > 0) {
                         const testAction = {
-                            description: testActions[i],
+                            description: testActions[i].replace('* ', ''),
                             sequence: testActions.indexOf(testActions[i]) + 1,
                             testCaseId: newTestCaseResult.id
                         }
@@ -66,8 +63,8 @@ export const createTestCases = async function (testModules: any): Promise<any> {
                 }
             }
 
-            if (testCases[i].precondition) {
-                const testConditions: string[] = splitOnNewline(testCases[i].precondition);
+            if (testCases[i].Conditions) {
+                const testConditions: string[] = testCases[i].Conditions.split('* ');
                 for (let i = 0; i < testConditions.length; i++) {
                     if (testConditions[i].trim().length > 0) {
 
@@ -80,15 +77,15 @@ export const createTestCases = async function (testModules: any): Promise<any> {
                 }
             }
 
-            if (testCases[i].expectedResults) {
-                const expectedResults: string[] = splitOnNewline(testCases[i].expectedResults);
+            if (testCases[i]["Expected Results"]) {
+                const expectedResults: string[] = testCases[i]["Expected Results"].split('* ');
                 for (let i = 0; i < expectedResults.length; i++) {
                     if (expectedResults[i].trim().length > 0) {
-
                         const expectedResult = {
                             description: expectedResults[i].replace('* ', ''),
                             testCaseId: newTestCaseResult.id
                         }
+
                         const res = await axios.post(`${baseUrl}expected-results`, expectedResult);
                     }
 
@@ -96,7 +93,7 @@ export const createTestCases = async function (testModules: any): Promise<any> {
             }
             console.log(`Created`);
         } catch (error) {
-            console.log(error.response)
+            console.log(error)
         }
 
 
@@ -104,29 +101,8 @@ export const createTestCases = async function (testModules: any): Promise<any> {
     return newTestCases;
 }
 
-function setPriority(value: string): number {
-    let result;
-    switch (value) {
-        case 'Low':
-            result = 0;
-            break;
-        case 'Medium':
-            result = 1;
-            break;
-        case 'High':
-            result = 2;
-            break;
-        case 'Critical':
-            result = 3;
-            break;
-        default:
-            result = 0;
-    }
-    return result;
-}
-
 function splitOnNewline(str: string): string[] {
-    let arr = [];
+    let arr:Array<string> = [];
     if (str.indexOf('\n') > -1) {
         arr = str.split('\n');
     } else {

@@ -7,8 +7,8 @@ import { mapTestModules } from './services/testModules';
 import { createTestCases } from './services/testCases';
 
 async function start(): Promise<void> {
-    const testSuites = await createTestSuites();
-    const testModules = await mapTestModules(testSuites);
+    const testSuite = await createTestSuites().catch(err => console.log(err.message));
+    const testModules = await mapTestModules(testSuite);
     const testCases = await createTestCases(testModules);
 }
 

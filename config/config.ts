@@ -1,3 +1,3 @@
 // export const baseUrl = 'http://localhost:5000/' // api url
-export const baseUrl = 'https://as-kno2toucanapi-dev.azurewebsites.net/' // api url
-export const token = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6IlF6UkZSVGxFTURZMU1qUkVSRGRDTURrM09ERTJRek5FTWtNMlEwRTBSRVJFUWpRME56QTJSUSJ9.eyJpc3MiOiJodHRwczovL3JveWFsLWpheS5hdXRoMC5jb20vIiwic3ViIjoiV3gxN2g0YXFXTGNEa3lNb2tJUXF4VHBBVUtoT0czbDhAY2xpZW50cyIsImF1ZCI6Imh0dHBzOi8vYXMta25vMnRvdWNhbmFwaS1kZXYuYXp1cmV3ZWJzaXRlcy5uZXQiLCJpYXQiOjE1MjY5MTc5NTAsImV4cCI6MTUyNzAwNDM1MCwiYXpwIjoiV3gxN2g0YXFXTGNEa3lNb2tJUXF4VHBBVUtoT0czbDgiLCJndHkiOiJjbGllbnQtY3JlZGVudGlhbHMifQ.Cl0dS9_0ID4j5iX6DbNZZxVyjWS1qfnC5SYxEZAQQnrZ5R3RaEVUMrDPH4CxmsMLCLeLzV8lxBRD3LdOb7vq8cyv0DtkVo7C2aPN4RyvlQj0-NkNoi8xW6Lm2wvwioecpXWHA-fICUXP7l2kzwzHinzv0ZP-b1PAf2LiFUz1M1qLazZX49KqKORV8lPnKTJltVZLHr-SrXKy9OolvqJnXO61_HplIusm3Or8aFF7p6woWg79TNo1rwm2rbSwg4j8vLH_JRsr09KsGOrmhriMzb_i_wTqpd_3m9rtl7AtOVgyzpvfKlhWDVpyYljcvJ2z9lAeuvrxpTH9Nj5UfR81Aw'; // test token from auth0
+export const baseUrl = 'https://api-toucan-rj-perch-tst-wu2.azurewebsites.net/' // api url
+export const token = ''

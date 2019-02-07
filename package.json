@@ -4,7 +4,7 @@
   "description": "",
   "main": "import.js",
   "scripts": {
-    "start-import": "node dist/start",
+    "start-import": "ts-node start",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
@@ -14,5 +14,9 @@
     "@types/node": "^9.4.6",
     "axios": "^0.18.0",
     "lodash": "^4.17.5"
+  },
+  "devDependencies": {
+    "csv2json": "^1.4.2",
+    "typescript": "^3.3.1"
   }
 }

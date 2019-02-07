@@ -1,0 +1,80 @@
+[
+    {
+        "Suite": "EOC Smoke Tests",
+        "Module": "Episode Overview & Services",
+        "Last Tested": "1/22/2019",
+        "Automated": "No",
+        "Automation ID": "",
+        "Criteria": "Yes",
+        "Priority": "High",
+        "Case": "Episode Overview [All Facilities - Oct 2016 to Sep 2017 - Include Outliers]",
+        "Expected Results": "* ===>>> For each of the below, the data should be exact or very close since no changes expected. <<<===* Total Claim Spend Margin: -5.93% 109.67M Spend / 103.53M Target 12m  -5.71% * Total Volume: 4,288 12m  9.91% * Total Post Anchor Spend to Total Spend: 49.74% 54.55M / 109.67M 12m  2.76%* 90-day Readmit Rate: 24.88% 1,067 Readmits / 4,288 Ep 12m  3.81%* ED Utilization:  34.35% 1,473 / 4,288 12m 2.69% ",
+        "Conditions": "* Set Comparison Period (upper page) to Oct 2016 to Sep 2017.  Click Apply button.* Filter -> select checkbox ‘Available Medical Facilities’ and make sure showing all facilities.  Deselected checkbox: Exclude Outliers.  Click Apply button.* Under Settings (gear upper right) -> TARGET PRICING tab -> all enabled except Bone & Joint’s ‘Clinical Episode Type’ = ‘DJRLE’ and Spine’s ‘Clinical Episode Type’ = ‘Combined Anterior Posterior Spinal Fusion.’ ",
+        "Steps": "* Purpose: Verify network aggregate data on stats bar (Episode Overview)* Episode Overview -> observe content in header area"
+    },
+    {
+        "Suite": "EOC Smoke Tests",
+        "Module": "Episode Overview & Services",
+        "Last Tested": "1/22/2019",
+        "Automated": "No",
+        "Automation ID": "",
+        "Criteria": "Yes",
+        "Priority": "High",
+        "Case": "Episode Overview [One Facility - Oct 2016 to Sep 2017- Include Outliers]",
+        "Expected Results": "* ===>>> For each of the below, the data should be exact or very close since no changes expected. <<<===* Total Claim Spend Margin: 1.97% 45.48M Spend / 46.39M Target 12m  -2.24%* Total Volume: 1,880 12m  7.02%* Total Post Anchor Spend to Total Spend:48.07% 21.86M / 45.48M 12m  2.98%* 90-Day Readmit Rate: 23.30% 438 Readmits / 1,880 Ep 12m  4.48%* ED Utilization: 34.41% 647 / 1,880 12m  4.21%",
+        "Conditions": "* Set Comparison Period (upper page) to Oct 2016 to Sep 2017.  Click Apply button.* Filter -> deselect checkbox ‘Available Medical Facilities’ and select St. Lukes facility [in Test this would be ‘Facility 2140 1275243322 - 1884’].  Deselected checkbox: Exclude Outliers.  Click Apply button.* Under Settings (gear upper right) -> TARGET PRICING tab -> all enabled except Bone & Joint’s ‘Clinical Episode Type’ = ‘DJRLE’ and Spine’s ‘Clinical Episode Type’ = ‘Combined Anterior Posterior Spinal Fusion.’ ",
+        "Steps": "* Purpose: Verify network aggregate data on stats bar (Episode Overview)* Episode Overview -> observe content in header area"
+    },
+    {
+        "Suite": "EOC Smoke Tests",
+        "Module": "Episode Overview & Services",
+        "Last Tested": "1/22/2019",
+        "Automated": "No",
+        "Automation ID": "",
+        "Criteria": "Yes",
+        "Priority": "High",
+        "Case": "Episode Overview [All Facilities - Oct 2016 to Sep 2017 - Exclude Outliers]",
+        "Expected Results": "* ===>>> For each of the below, the data should be exact or very close since no changes expected. <<<===* Total Claim Spend Margin 1.45%-5.93% 97.27M Spend / 98.70M Target 12m -4.06% * Total Volume 4,0814,288 12m 9.36%  * Total Post Anchor Spend to Total Spend 46.18%49.74% 44.92M / 97.27M 12m 2.32%* 90-Day Readmit Rate 23.43%24.88% 956 Readmits / 4,081 Ep 12m 3.66% * ED Utilization 33.45%34.35% 1,365 / 4,081 12m 2.47%  ",
+        "Conditions": "* Set Comparison Period (upper page) to Oct 2016 to Sep 2017.  Click Apply button.* Filter -> select checkbox ‘Available Medical Facilities’ and make sure showing all facilities.  Click ‘Exclude Outliers’ checkbox. Click Apply button.* Under Settings (gear upper right) -> TARGET PRICING tab -> all enabled except Bone & Joint’s ‘Clinical Episode Type’ = ‘DJRLE’ and Spine’s ‘Clinical Episode Type’ = ‘Combined Anterior Posterior Spinal Fusion.’ ",
+        "Steps": "* Purpose: Verify network aggregate data on stats bar (Episode Overview)* Episode Overview -> observe content in header area"
+    },
+    {
+        "Suite": "EOC Smoke Tests",
+        "Module": "Episode Overview & Services",
+        "Last Tested": "1/22/2019",
+        "Automated": "No",
+        "Automation ID": "",
+        "Criteria": "Yes",
+        "Priority": "High",
+        "Case": "Episode Overview [One Facility - Oct 2016 to Sep 2017- Exclude Outliers] ",
+        "Expected Results": "* ===>>> For each of the below, the data should be exact or very close since no changes expected. <<<===* Total Claim Spend Margin: 6.00% 1.97% 42.06M Spend / 44.74M Target 12m -3.29%* Total Volume: 1,811   1,880 12m 7.40%* Total Post Anchor Spend to Total Spend: 45.17%  48.07% 19.00M / 42.06M 12m 3.55%* 90-Day Readmit Rate: 22.47%   23.30% 407 Readmits / 1,811 Ep 12m 4.94%* ED Utilization: 34.24%  34.41% 620 / 1,811 12m 4.78%",
+        "Conditions": "* Set Comparison Period (upper page) to Oct 2016 to Sep 2017.  Click Apply button.* Filter -> deselect checkbox ‘Available Medical Facilities’ and select St. Lukes facility [in Test this would be ‘Facility 2140 1275243322 - 1884’].  Select checkbox: Exclude Outliers.  Click Apply button.* Under Settings (gear upper right) -> TARGET PRICING tab -> all enabled except Bone & Joint’s ‘Clinical Episode Type’ = ‘DJRLE’ and Spine’s ‘Clinical Episode Type’ = ‘Combined Anterior Posterior Spinal Fusion.’ ",
+        "Steps": "* Purpose: Verify network aggregate data on stats bar (Episode Overview)* Episode Overview -> observe content in header area"
+    },
+    {
+        "Suite": "EOC Smoke Tests",
+        "Module": "Episode Overview & Services",
+        "Last Tested": "1/22/2019",
+        "Automated": "No",
+        "Automation ID": "",
+        "Criteria": "Yes",
+        "Priority": "High",
+        "Case": "Episode Overview -> Average Spend chart",
+        "Expected Results": "* Target Price is displayed with a black bar on the graph for each of the bars",
+        "Conditions": "* SETUP: Set Comparison Period (upper page) to Oct 2016 to Sep 2017. Click Apply button.* SETUP: For each of the following Filters, verify Average Spend graph’s Target Price black bar lines are present on graph for all Services (bars on graph):* _____ 1. Filter by All Facilities, outliers not excluded* _____ 2. Filter by All Facilities, outliers excluded* _____ 3. Filter by St Lukes, outliers not excluded* _____ 4. Filter by St Lukes, outliers excluded",
+        "Steps": "* PURPOSE: Verify Average Spend correctly displays the ‘Target Price’ black bar(s) on the graph* For each filter in Pre-Conditions of this test, Go to Episode Overview -> Episode tab -> Average Spend graph to verify graph."
+    },
+    {
+        "Suite": "EOC Smoke Tests",
+        "Module": "Episode Overview & Services",
+        "Last Tested": "1/22/2019",
+        "Automated": "No",
+        "Automation ID": "",
+        "Criteria": "Yes",
+        "Priority": "High",
+        "Case": "Services -> Cardiac -> AMI [All Facilities - Oct 2016 to Sep 2017 - Include Outliers]",
+        "Expected Results": "* Cardiac AMI Graph: Claim Spend Margin Target: $21,917 -31.1%* AMI Graph: 90-Day Readmit Rate 42.34% 12m 15.06%* AMI Graph: Total Post Anchor Spend to Total Spend % 65.34% 12m 10.23%* AMI Graph: Spend Surplus/Deficit -932.69K 12m -132.38%* AMI Graph: ED Utilization 48.91% 12m 9.81%* Provider Detail tab (drilldown from graph): Total Claim Spend Margin -31.06% 3.94M Spend / 3.00M Target 12m -43.59%* Provider Detail tab (drilldown from graph): Total Volume 137 12m 19.71%* Provider Detail tab: Average Claim Spend Amount $28,725 Target Price: $21,917 12m 33.26%* Provider Detail tab: Total Post Anchor Spend to Total Spend 65.34% 2.57M / 3.94M 12m 10.23%* Provider Detail tab: 90 Day Readmit Rate 42.34% 58 / 137 Ep 12m 15.06%* Provider Detail tab: ED Utilization 48.91% 67 / 137 12m 9.81%",
+        "Conditions": "* Setup: Comparison Period:From Oct 2016 to Sep 2017* Filter: All facilities, include outliers* Settings: all enabled except DJRLE and ‘Combined Anterior Posterior Spinal Fusion’",
+        "Steps": "* PURPOSE: Verify Services contains correct data for Services -> Cardiac -> AMI (Acute myocardial infarction)* Go to Services -> Cardiac -> AMI (clinical episode type graph) and observe data for expected results* Go to Cardiac -> AMI -> click chart -> PROVIDER DETAIL tab, verify data for expected results"
+    }
+]
